@@ -1,4 +1,6 @@
 # generators
-Examples used in a presentation about ES6 generators 
+Examples used in a presentation about ES6 generators
 
-The presentation cab be found here http://slides.com/filipstenbeck/deck/fullscreen
+All examples can be run with node 4.x.x
+
+The presentation can be found here http://slides.com/filipstenbeck/deck/fullscreen

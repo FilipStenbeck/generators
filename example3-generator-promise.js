@@ -1,14 +1,16 @@
-var request = require('request-promise');
-var it;
+'use strict';
 
-var getData = url => request(url).then(response => it.next(response));
+let request = require('request-promise');
+let it;
+
+let getData = url => request(url).then(response => it.next(response));
 
 function* main() {
-  var ids = JSON.parse(
+  let ids = JSON.parse(
     yield getData('http://mini-geek-service.appspot.com/hotgames?alt=json'))
       .result.map(item => item.id);
 
-  var boardgame = JSON.parse(
+  let boardgame = JSON.parse(
     yield getData(`http://mini-geek-service.appspot.com/gameinfo?id=${ids[0]}&alt=json`))
       .result[0];
 
@@ -16,4 +18,4 @@ function* main() {
 }
 
 it = main();
-it.next(); // get it all started
+it.next();
